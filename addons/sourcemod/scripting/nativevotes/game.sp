@@ -396,6 +396,13 @@ bool Game_IsGameSupported(char[] engineName="", int maxlength=0)
 		g_EngineVersion = Engine_TF2;
 	}
 
+	//Fix for TF2 Classified
+	if ( StrEqual(gameDir, "tf2classified") )
+	{
+		g_EngineVersion = Engine_TF2;
+		isTF2SDKModHack = false;
+	}
+
 	switch (g_EngineVersion)
 	{
 		case Engine_Left4Dead, Engine_Left4Dead2, Engine_CSGO, Engine_TF2:
